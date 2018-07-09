@@ -1,0 +1,31 @@
+---
+title: "Plotly Presentation IO"
+author: "Donato Scarano"
+date: "09 luglio 2018"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+---
+
+## Slide with Bullets
+
+We have created a web page presentation using R Markdown that features a plot created with Plotly. 
+
+We used the mtcars dataset.
+
+## MTCARS Dataset Summary
+
+```{r cars, echo = TRUE}
+summary(mtcars)
+```
+
+## Plot
+
+```{r echo=TRUE}
+library(plotly)
+library(ggplot2)
+data("mtcars")
+p<-plot_ly(x=mtcars$mpg, y=mtcars$cyl,z=mtcars$disp, type = "scatter3d", mode="markers",color = mtcars$cyl)
+p
+```
+
